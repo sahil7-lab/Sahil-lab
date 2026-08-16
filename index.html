@@ -1,490 +1,250 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sa7hil Campaign</title>
+  <meta name="description" content="Sa7hill Firebase Phone OTP Authentication">
+  <title>Sa7hill | Phone OTP Login</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="topbar">
+  <main class="container">
 
-  <div class="brand">
+    <!-- AUTH -->
+    <section id="authCard" class="auth-card">
 
-    <img
-      src="logo.png"
-      alt="Sa7hil Logo"
-      class="logo"
-    >
-
-    <div>
-      <b>Sa7hil Campaign</b>
-      <small>SMART • SIMPLE • SECURE</small>
-    </div>
-
-  </div>
-
-  <nav>
-    <a href="#dashboard">Dashboard</a>
-    <a href="#campaign">Start Campaign</a>
-    <a href="#wallet">Wallet</a>
-    <a href="#reports">Reports</a>
-    <a href="#premium">Premium</a>
-  </nav>
-
-  <button class="btn" id="loginBtn">
-    Login
-  </button>
-
-</header>
+      <div class="brand">
+        <div class="logo">S</div>
+        <h1>Sa7hill</h1>
+        <p>Secure phone authentication</p>
+      </div>
 
 
-<main>
+      <!-- PHONE FORM -->
+      <div id="phoneSection">
 
-  <!-- HERO -->
+        <h2>Login / Create Account</h2>
 
-  <section class="hero">
+        <p class="form-info">
+          Enter your mobile number and we'll send you a verification code.
+        </p>
 
-    <div>
+        <form id="phoneForm">
 
-      <span class="tag">
-        CAMPAIGN PLATFORM
-      </span>
+          <div class="input-group">
 
-      <h1>
-        Sa7hil Campaign
-      </h1>
+            <label for="phoneNumber">
+              Mobile Number
+            </label>
 
-      <p>
-        Smart, simple और secure campaign portal —
-        profile, login, premium, wallet और reports के लिए तैयार.
-      </p>
+            <div class="phone-input">
 
-      <div class="hero-actions">
+              <span class="country-code">+91</span>
 
-        <a
-          class="btn"
-          href="#dashboard"
-        >
-          Open Dashboard
-        </a>
+              <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="9876543210"
+                maxlength="10"
+                inputmode="numeric"
+                autocomplete="tel"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- reCAPTCHA -->
+          <div id="recaptcha-container"></div>
+
+
+          <button
+            type="submit"
+            id="sendOtpBtn"
+            class="btn primary-btn"
+          >
+            Send OTP
+          </button>
+
+        </form>
+
+        <p class="security-note">
+          🔒 Your phone number is verified securely using Firebase.
+        </p>
+
+      </div>
+
+
+      <!-- OTP FORM -->
+      <div id="otpSection" class="hidden">
+
+        <div class="otp-icon">📱</div>
+
+        <h2>Verify OTP</h2>
+
+        <p class="form-info">
+          Enter the 6-digit code sent to
+        </p>
+
+        <p id="sentNumber" class="sent-number">
+          +91 XXXXX XXXXX
+        </p>
+
+
+        <form id="otpForm">
+
+          <div class="input-group">
+
+            <label for="otpCode">
+              Verification Code
+            </label>
+
+            <input
+              type="text"
+              id="otpCode"
+              class="otp-input"
+              placeholder="000000"
+              maxlength="6"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+              required
+            >
+
+          </div>
+
+
+          <button
+            type="submit"
+            id="verifyOtpBtn"
+            class="btn primary-btn"
+          >
+            Verify OTP
+          </button>
+
+        </form>
+
 
         <button
-          class="btn campaign-btn"
-          id="startCampaignBtn"
+          id="resendOtp"
+          class="text-btn"
         >
-          🚀 Start Campaign
+          Resend OTP
         </button>
 
-      </div>
-
-    </div>
-
-
-    <div class="hero-logo">
-
-      <img
-        src="logo.png"
-        alt="Sa7hil Campaign Logo"
-      >
-
-    </div>
-
-  </section>
-
-
-  <!-- DASHBOARD -->
-
-  <section
-    id="dashboard"
-    class="section"
-  >
-
-    <h2>Dashboard</h2>
-
-    <div class="grid">
-
-      <div class="card">
-
-        <b>👤 Profile</b>
-
-        <p>
-          आपका Sa7hil logo default profile image रहेगा.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <b>🔐 Login</b>
-
-        <p>
-          Firebase Email/Password और Phone OTP के लिए ready.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <b>👑 Premium</b>
-
-        <p>
-          Premium provider बाद में सुरक्षित backend से connect करें.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CAMPAIGN -->
-
-  <section
-    id="campaign"
-    class="section"
-  >
-
-    <h2>🚀 Start Campaign</h2>
-
-    <div class="card campaign-card">
-
-      <div>
-
-        <span class="tag">
-          CAMPAIGN SETUP
-        </span>
-
-        <h3>
-          Create Your Campaign
-        </h3>
-
-        <p>
-          Campaign name, goal और details भरकर
-          अपना campaign शुरू करें.
-        </p>
-
-      </div>
-
-
-      <div class="campaign-form">
-
-        <input
-          id="campaignName"
-          type="text"
-          placeholder="Campaign Name"
-        >
-
-        <input
-          id="campaignGoal"
-          type="text"
-          placeholder="Campaign Goal"
-        >
-
-        <textarea
-          id="campaignDescription"
-          placeholder="Campaign Description"
-        ></textarea>
 
         <button
-          class="btn"
-          id="launchCampaignBtn"
+          id="changeNumber"
+          class="change-number"
         >
-          🚀 Launch Campaign
-        </button>
-
-        <p id="campaignMessage"></p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WALLET -->
-
-  <section
-    id="wallet"
-    class="section"
-  >
-
-    <h2>Wallet</h2>
-
-    <div class="wallet">
-
-      <div class="card balance">
-
-        <span class="tag">
-          BALANCE
-        </span>
-
-        <strong>
-          ₹0.00
-        </strong>
-
-        <button
-          class="btn"
-          id="addMoney"
-        >
-          Add Money
+          ← Change phone number
         </button>
 
       </div>
 
 
-      <div class="grid">
+      <!-- MESSAGE -->
+      <div id="message" class="message"></div>
 
-        <div class="card">
+    </section>
 
-          ⚡ <b>UPI</b>
 
-          <p>
-            Provider integration placeholder.
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="dashboard hidden">
+
+      <div class="dashboard-header">
+
+        <div>
+
+          <p class="welcome-small">
+            Welcome back
           </p>
+
+          <h1 id="userTitle">
+            User
+          </h1>
 
         </div>
 
 
-        <div class="card">
+        <button
+          id="logoutBtn"
+          class="logout-btn"
+        >
+          Logout
+        </button>
 
-          🏦 <b>IMPS</b>
+      </div>
 
-          <p>
-            Provider backend integration.
+
+      <div class="dashboard-content">
+
+
+        <!-- PROFILE -->
+        <div class="profile-card">
+
+          <div
+            id="profileIcon"
+            class="profile-icon"
+          >
+            U
+          </div>
+
+          <h2 id="profileName">
+            User
+          </h2>
+
+          <p id="profilePhone">
+            +91 XXXXX XXXXX
           </p>
+
+          <span class="verified-badge">
+            ✓ Phone Verified
+          </span>
 
         </div>
 
 
-        <div class="card">
+        <!-- PROJECT -->
+        <div class="project-card">
 
-          💳 <b>NEFT / Transfer</b>
+          <span class="project-label">
+            MY PROJECT
+          </span>
+
+          <h2>
+            Sa7hill GitHub Project
+          </h2>
 
           <p>
-            Provider backend integration.
+            Your Firebase authenticated dashboard is ready.
+            Add your project features, services and content here.
           </p>
+
+          <a
+            href="https://sa7hill.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-btn"
+          >
+            Visit Project
+          </a>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </main>
 
 
-  <!-- REPORTS -->
-
-  <section
-    id="reports"
-    class="section"
-  >
-
-    <h2>Campaign Reports</h2>
-
-    <div class="grid">
-
-      <div class="card">
-
-        📊 <b>Daily Report</b>
-
-        <p>
-          Campaign activity और progress.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        📈 <b>Weekly Report</b>
-
-        <p>
-          Weekly performance data.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        🧾 <b>Transactions</b>
-
-        <p>
-          Wallet transaction history.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PREMIUM -->
-
-  <section
-    id="premium"
-    class="section"
-  >
-
-    <h2>Premium Setup</h2>
-
-    <div class="card">
-
-      <h3>
-        👑 Premium Membership
-      </h3>
-
-      <p>
-        यहाँ बाद में आपका चुना हुआ
-        premium/payment provider connect किया जा सकता है.
-      </p>
-
-      <button
-        class="btn"
-        id="premiumBtn"
-      >
-        Premium Setup
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- LOGIN -->
-
-  <section
-    id="login"
-    class="section"
-  >
-
-    <div class="card">
-
-      <h2>
-        Login / Account
-      </h2>
-
-
-      <input
-        id="email"
-        type="email"
-        placeholder="Email"
-        autocomplete="email"
-      >
-
-
-      <input
-        id="password"
-        type="password"
-        placeholder="Password"
-        autocomplete="current-password"
-      >
-
-
-      <div class="actions">
-
-        <button
-          class="btn"
-          id="emailLogin"
-        >
-          Login
-        </button>
-
-        <button
-          class="btn secondary"
-          id="signup"
-        >
-          Create Account
-        </button>
-
-      </div>
-
-
-      <button
-        class="link"
-        id="forgot"
-      >
-        Forgot Password?
-      </button>
-
-
-      <hr>
-
-
-      <!-- PHONE OTP -->
-
-      <input
-        id="phone"
-        type="tel"
-        placeholder="+91XXXXXXXXXX"
-        autocomplete="tel"
-      >
-
-
-      <button
-        class="btn"
-        id="otp"
-      >
-        Send Phone OTP
-      </button>
-
-
-      <!-- RECAPTCHA -->
-
-      <div id="recaptcha-container"></div>
-
-
-      <!-- OTP -->
-
-      <input
-        id="otpCode"
-        class="hidden"
-        maxlength="6"
-        inputmode="numeric"
-        placeholder="6-digit OTP"
-        autocomplete="one-time-code"
-      >
-
-
-      <button
-        id="verifyOtp"
-        class="btn hidden"
-      >
-        Verify OTP
-      </button>
-
-
-      <p id="message"></p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-  © 2026 Sa7hil Campaign • Smart • Simple • Secure
-</footer>
-
-
-<!-- FIREBASE SCRIPT -->
-
-<script
-  type="module"
-  src="script.js"
-></script>
+  <script type="module" src="script.js"></script>
 
 </body>
 </html>
+
