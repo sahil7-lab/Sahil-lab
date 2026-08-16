@@ -53,6 +53,7 @@ function getElement(id) {
   return document.getElementById(id);
 }
 
+
 function showMessage(text, success = false) {
 
   const message = getElement("message");
@@ -93,7 +94,9 @@ getElement("emailLogin")?.addEventListener("click", async () => {
 
   if (!email || !password) {
 
-    showMessage("Please enter your email and password.");
+    showMessage(
+      "Please enter your email and password."
+    );
 
     return;
 
@@ -115,7 +118,11 @@ getElement("emailLogin")?.addEventListener("click", async () => {
 
   } catch (error) {
 
-    showMessage(error.message);
+    console.error("Login error:", error);
+
+    showMessage(
+      error.message
+    );
 
   }
 
@@ -170,7 +177,11 @@ getElement("signup")?.addEventListener("click", async () => {
 
   } catch (error) {
 
-    showMessage(error.message);
+    console.error("Signup error:", error);
+
+    showMessage(
+      error.message
+    );
 
   }
 
@@ -211,7 +222,14 @@ getElement("forgot")?.addEventListener("click", async () => {
 
   } catch (error) {
 
-    showMessage(error.message);
+    console.error(
+      "Password reset error:",
+      error
+    );
+
+    showMessage(
+      error.message
+    );
 
   }
 
@@ -243,6 +261,7 @@ getElement("otp")?.addEventListener("click", async () => {
 
   try {
 
+    // Create reCAPTCHA only once
     if (!window.recaptchaVerifier) {
 
       window.recaptchaVerifier =
@@ -253,6 +272,8 @@ getElement("otp")?.addEventListener("click", async () => {
             size: "normal"
           }
         );
+
+      await window.recaptchaVerifier.render();
 
     }
 
@@ -280,15 +301,29 @@ getElement("otp")?.addEventListener("click", async () => {
 
   } catch (error) {
 
-    showMessage(error.message);
+    console.error(
+      "Phone OTP error:",
+      error
+    );
+
+    showMessage(
+      error.message
+    );
 
 
+    // Reset reCAPTCHA after an error
     try {
 
       window.recaptchaVerifier?.clear();
 
-    } catch (e) {}
+    } catch (e) {
 
+      console.error(
+        "reCAPTCHA clear error:",
+        e
+      );
+
+    }
 
     window.recaptchaVerifier = null;
 
@@ -342,9 +377,19 @@ getElement("verifyOtp")?.addEventListener(
         true
       );
 
+      confirmationResult = null;
+
+
     } catch (error) {
 
-      showMessage(error.message);
+      console.error(
+        "OTP verification error:",
+        error
+      );
+
+      showMessage(
+        error.message
+      );
 
     }
 
@@ -445,7 +490,9 @@ getElement("launchCampaignBtn")
           userId: user.uid,
 
           userEmail:
-            user.email || null,
+            user.email ||
+            user.phoneNumber ||
+            null,
 
           createdAt:
             serverTimestamp()
@@ -471,6 +518,11 @@ getElement("launchCampaignBtn")
 
     } catch (error) {
 
+      console.error(
+        "Campaign error:",
+        error
+      );
+
       if (campaignMessage) {
 
         campaignMessage.textContent =
@@ -495,7 +547,8 @@ onAuthStateChanged(
 
       console.log(
         "User logged in:",
-        user.email || user.phoneNumber
+        user.email ||
+        user.phoneNumber
       );
 
     } else {
@@ -526,6 +579,11 @@ window.sa7hilLogout = async () => {
     );
 
   } catch (error) {
+
+    console.error(
+      "Logout error:",
+      error
+    );
 
     showMessage(
       error.message
