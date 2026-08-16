@@ -1,13 +1,5 @@
 Sa7hil Campaign website files
-
-
 start campaign 
-
-
-
-
-
-
 Files:
 - index.html
 - style.css
