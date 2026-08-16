@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sa7hil Campaign</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,12 +13,18 @@
 <header class="topbar">
 
   <div class="brand">
-    <img src="logo.png" alt="Sa7hil Logo">
+
+    <img
+      src="logo.png"
+      alt="Sa7hil Logo"
+      class="logo"
+    >
 
     <div>
       <b>Sa7hil Campaign</b>
       <small>SMART • SIMPLE • SECURE</small>
     </div>
+
   </div>
 
   <nav>
@@ -37,9 +44,7 @@
 
 <main>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -91,27 +96,20 @@
   </section>
 
 
-  <!-- =========================
-       DASHBOARD
-  ========================== -->
+  <!-- DASHBOARD -->
 
   <section
     id="dashboard"
     class="section"
   >
 
-    <h2>
-      Dashboard
-    </h2>
-
+    <h2>Dashboard</h2>
 
     <div class="grid">
 
       <div class="card">
 
-        <b>
-          👤 Profile
-        </b>
+        <b>👤 Profile</b>
 
         <p>
           आपका Sa7hil logo default profile image रहेगा.
@@ -122,9 +120,7 @@
 
       <div class="card">
 
-        <b>
-          🔐 Login
-        </b>
+        <b>🔐 Login</b>
 
         <p>
           Firebase Email/Password और Phone OTP के लिए ready.
@@ -135,9 +131,7 @@
 
       <div class="card">
 
-        <b>
-          👑 Premium
-        </b>
+        <b>👑 Premium</b>
 
         <p>
           Premium provider बाद में सुरक्षित backend से connect करें.
@@ -150,19 +144,14 @@
   </section>
 
 
-  <!-- =========================
-       CAMPAIGN
-  ========================== -->
+  <!-- CAMPAIGN -->
 
   <section
     id="campaign"
     class="section"
   >
 
-    <h2>
-      🚀 Start Campaign
-    </h2>
-
+    <h2>🚀 Start Campaign</h2>
 
     <div class="card campaign-card">
 
@@ -192,19 +181,16 @@
           placeholder="Campaign Name"
         >
 
-
         <input
           id="campaignGoal"
           type="text"
           placeholder="Campaign Goal"
         >
 
-
         <textarea
           id="campaignDescription"
           placeholder="Campaign Description"
         ></textarea>
-
 
         <button
           class="btn"
@@ -212,7 +198,6 @@
         >
           🚀 Launch Campaign
         </button>
-
 
         <p id="campaignMessage"></p>
 
@@ -223,19 +208,14 @@
   </section>
 
 
-  <!-- =========================
-       WALLET
-  ========================== -->
+  <!-- WALLET -->
 
   <section
     id="wallet"
     class="section"
   >
 
-    <h2>
-      Wallet
-    </h2>
-
+    <h2>Wallet</h2>
 
     <div class="wallet">
 
@@ -263,10 +243,7 @@
 
         <div class="card">
 
-          ⚡
-          <b>
-            UPI
-          </b>
+          ⚡ <b>UPI</b>
 
           <p>
             Provider integration placeholder.
@@ -277,10 +254,7 @@
 
         <div class="card">
 
-          🏦
-          <b>
-            IMPS
-          </b>
+          🏦 <b>IMPS</b>
 
           <p>
             Provider backend integration.
@@ -291,10 +265,7 @@
 
         <div class="card">
 
-          💳
-          <b>
-            NEFT / Transfer
-          </b>
+          💳 <b>NEFT / Transfer</b>
 
           <p>
             Provider backend integration.
@@ -309,28 +280,20 @@
   </section>
 
 
-  <!-- =========================
-       REPORTS
-  ========================== -->
+  <!-- REPORTS -->
 
   <section
     id="reports"
     class="section"
   >
 
-    <h2>
-      Campaign Reports
-    </h2>
-
+    <h2>Campaign Reports</h2>
 
     <div class="grid">
 
       <div class="card">
 
-        📊
-        <b>
-          Daily Report
-        </b>
+        📊 <b>Daily Report</b>
 
         <p>
           Campaign activity और progress.
@@ -341,10 +304,7 @@
 
       <div class="card">
 
-        📈
-        <b>
-          Weekly Report
-        </b>
+        📈 <b>Weekly Report</b>
 
         <p>
           Weekly performance data.
@@ -355,10 +315,7 @@
 
       <div class="card">
 
-        🧾
-        <b>
-          Transactions
-        </b>
+        🧾 <b>Transactions</b>
 
         <p>
           Wallet transaction history.
@@ -371,19 +328,14 @@
   </section>
 
 
-  <!-- =========================
-       PREMIUM
-  ========================== -->
+  <!-- PREMIUM -->
 
   <section
     id="premium"
     class="section"
   >
 
-    <h2>
-      Premium Setup
-    </h2>
-
+    <h2>Premium Setup</h2>
 
     <div class="card">
 
@@ -408,9 +360,7 @@
   </section>
 
 
-  <!-- =========================
-       LOGIN
-  ========================== -->
+  <!-- LOGIN -->
 
   <section
     id="login"
@@ -423,8 +373,6 @@
         Login / Account
       </h2>
 
-
-      <!-- EMAIL -->
 
       <input
         id="email"
@@ -450,7 +398,6 @@
         >
           Login
         </button>
-
 
         <button
           class="btn secondary"
@@ -491,12 +438,12 @@
       </button>
 
 
-      <!-- FIREBASE RECAPTCHA -->
+      <!-- RECAPTCHA -->
 
       <div id="recaptcha-container"></div>
 
 
-      <!-- OTP CODE -->
+      <!-- OTP -->
 
       <input
         id="otpCode"
@@ -516,8 +463,6 @@
       </button>
 
 
-      <!-- MESSAGE -->
-
       <p id="message"></p>
 
     </div>
@@ -527,18 +472,14 @@
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================== -->
+<!-- FOOTER -->
 
 <footer>
   © 2026 Sa7hil Campaign • Smart • Simple • Secure
 </footer>
 
 
-<!-- =========================
-     FIREBASE JAVASCRIPT
-========================== -->
+<!-- FIREBASE SCRIPT -->
 
 <script
   type="module"
