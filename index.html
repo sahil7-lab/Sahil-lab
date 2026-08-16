@@ -1,102 +1,549 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sa7hil Campaign</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sa7hil Campaign</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="topbar">
-  <div class="brand"><img src="logo.png" alt="Sa7hil Logo"><div><b>Sa7hil Campaign</b><small>SMART • SIMPLE • SECURE</small></div></div>
-  <nav><a href="#dashboard">Dashboard</a><a href="#campaign">Start Campaign</a><a href="#wallet">Wallet</a><a href="#reports">Reports</a><a href="#premium">Premium</a></nav>
-  <button class="btn" id="loginBtn">Login</button>
-</header>
 
-<main>
-<section class="hero">
-  <div><span class="tag">CAMPAIGN PLATFORM</span><h1>Sa7hil Campaign</h1>
-  <p>Smart, simple और secure campaign portal — profile, login, premium, wallet और reports के लिए तैयार.</p>
-  <div class="hero-actions"><a class="btn" href="#dashboard">Open Dashboard</a><button class="btn campaign-btn" id="startCampaignBtn">🚀 Start Campaign</button></div></div>
-  <div class="hero-logo"><img src="logo.png" alt="Sa7hil Campaign Logo"></div>
-</section>
+  <div class="brand">
+    <img src="logo.png" alt="Sa7hil Logo">
 
-<section id="dashboard" class="section">
-<h2>Dashboard</h2><div class="grid">
-<div class="card"><b>👤 Profile</b><p>आपका Sa7hil logo default profile image रहेगा.</p></div>
-<div class="card"><b>🔐 Login</b><p>Firebase Email/Password और Phone OTP के लिए ready.</p></div>
-<div class="card"><b>👑 Premium</b><p>Premium provider बाद में सुरक्षित backend से connect करें.</p></div>
-</div></section>
-
-
-<section id="campaign" class="section">
-  <h2>🚀 Start Campaign</h2>
-  <div class="card campaign-card">
     <div>
-      <span class="tag">CAMPAIGN SETUP</span>
-      <h3>Create Your Campaign</h3>
-      <p>Campaign name, goal और details भरकर अपना campaign शुरू करें.</p>
-    </div>
-    <div class="campaign-form">
-      <input id="campaignName" type="text" placeholder="Campaign Name">
-      <input id="campaignGoal" type="text" placeholder="Campaign Goal">
-      <textarea id="campaignDescription" placeholder="Campaign Description"></textarea>
-      <button class="btn" id="launchCampaignBtn">🚀 Launch Campaign</button>
-      <p id="campaignMessage"></p>
+      <b>Sa7hil Campaign</b>
+      <small>SMART • SIMPLE • SECURE</small>
     </div>
   </div>
-</section>
 
-<section id="wallet" class="section">
-<h2>Wallet</h2><div class="wallet"><div class="card balance"><span class="tag">BALANCE</span><strong>₹0.00</strong><button class="btn" id="addMoney">Add Money</button></div>
-<div class="grid"><div class="card">⚡<b> UPI</b><p>Provider integration placeholder.</p></div><div class="card">🏦<b> IMPS</b><p>Provider backend integration.</p></div><div class="card">💳<b> NEFT / Transfer</b><p>Provider backend integration.</p></div></div></div></section>
+  <nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#campaign">Start Campaign</a>
+    <a href="#wallet">Wallet</a>
+    <a href="#reports">Reports</a>
+    <a href="#premium">Premium</a>
+  </nav>
 
-<section id="reports" class="section"><h2>Campaign Reports</h2><div class="grid">
-<div class="card">📊<b> Daily Report</b><p>Campaign activity और progress.</p></div>
-<div class="card">📈<b> Weekly Report</b><p>Weekly performance data.</p></div>
-<div class="card">🧾<b> Transactions</b><p>Wallet transaction history.</p></div>
-</div></section>
+  <button class="btn" id="loginBtn">
+    Login
+  </button>
 
-<section id="premium" class="section"><h2>Premium Setup</h2><div class="card"><h3>👑 Premium Membership</h3><p>यहाँ बाद में आपका चुना हुआ premium/payment provider connect किया जा सकता है.</p><button class="btn" id="premiumBtn">Premium Setup</button></div></section>
+</header>
 
-<section id="login" class="section"><div class="card">
-<h2>Login / Account</h2>
-<input id="email" type="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
-<div class="actions"><button class="btn" id="emailLogin">Login</button><button class="btn secondary" id="signup">Create Account</button></div>
-<button class="link" id="forgot">Forgot Password?</button>
-<hr>
-<input id="phone" type="tel" placeholder="+91XXXXXXXXXX">
-<button class="btn" id="otp">Send Phone OTP</button>
-<div id="recaptcha-container"></div>
-<input id="otpCode" class="hidden" maxlength="6" placeholder="6-digit OTP">
-<button id="verifyOtp" class="btn hidden">Verify OTP</button>
-<p id="message"></p>
-</div></section>
+
+<main>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div>
+
+      <span class="tag">
+        CAMPAIGN PLATFORM
+      </span>
+
+      <h1>
+        Sa7hil Campaign
+      </h1>
+
+      <p>
+        Smart, simple और secure campaign portal —
+        profile, login, premium, wallet और reports के लिए तैयार.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn"
+          href="#dashboard"
+        >
+          Open Dashboard
+        </a>
+
+        <button
+          class="btn campaign-btn"
+          id="startCampaignBtn"
+        >
+          🚀 Start Campaign
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-logo">
+
+      <img
+        src="logo.png"
+        alt="Sa7hil Campaign Logo"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       DASHBOARD
+  ========================== -->
+
+  <section
+    id="dashboard"
+    class="section"
+  >
+
+    <h2>
+      Dashboard
+    </h2>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <b>
+          👤 Profile
+        </b>
+
+        <p>
+          आपका Sa7hil logo default profile image रहेगा.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <b>
+          🔐 Login
+        </b>
+
+        <p>
+          Firebase Email/Password और Phone OTP के लिए ready.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <b>
+          👑 Premium
+        </b>
+
+        <p>
+          Premium provider बाद में सुरक्षित backend से connect करें.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CAMPAIGN
+  ========================== -->
+
+  <section
+    id="campaign"
+    class="section"
+  >
+
+    <h2>
+      🚀 Start Campaign
+    </h2>
+
+
+    <div class="card campaign-card">
+
+      <div>
+
+        <span class="tag">
+          CAMPAIGN SETUP
+        </span>
+
+        <h3>
+          Create Your Campaign
+        </h3>
+
+        <p>
+          Campaign name, goal और details भरकर
+          अपना campaign शुरू करें.
+        </p>
+
+      </div>
+
+
+      <div class="campaign-form">
+
+        <input
+          id="campaignName"
+          type="text"
+          placeholder="Campaign Name"
+        >
+
+
+        <input
+          id="campaignGoal"
+          type="text"
+          placeholder="Campaign Goal"
+        >
+
+
+        <textarea
+          id="campaignDescription"
+          placeholder="Campaign Description"
+        ></textarea>
+
+
+        <button
+          class="btn"
+          id="launchCampaignBtn"
+        >
+          🚀 Launch Campaign
+        </button>
+
+
+        <p id="campaignMessage"></p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WALLET
+  ========================== -->
+
+  <section
+    id="wallet"
+    class="section"
+  >
+
+    <h2>
+      Wallet
+    </h2>
+
+
+    <div class="wallet">
+
+      <div class="card balance">
+
+        <span class="tag">
+          BALANCE
+        </span>
+
+        <strong>
+          ₹0.00
+        </strong>
+
+        <button
+          class="btn"
+          id="addMoney"
+        >
+          Add Money
+        </button>
+
+      </div>
+
+
+      <div class="grid">
+
+        <div class="card">
+
+          ⚡
+          <b>
+            UPI
+          </b>
+
+          <p>
+            Provider integration placeholder.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          🏦
+          <b>
+            IMPS
+          </b>
+
+          <p>
+            Provider backend integration.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          💳
+          <b>
+            NEFT / Transfer
+          </b>
+
+          <p>
+            Provider backend integration.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       REPORTS
+  ========================== -->
+
+  <section
+    id="reports"
+    class="section"
+  >
+
+    <h2>
+      Campaign Reports
+    </h2>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        📊
+        <b>
+          Daily Report
+        </b>
+
+        <p>
+          Campaign activity और progress.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        📈
+        <b>
+          Weekly Report
+        </b>
+
+        <p>
+          Weekly performance data.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        🧾
+        <b>
+          Transactions
+        </b>
+
+        <p>
+          Wallet transaction history.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PREMIUM
+  ========================== -->
+
+  <section
+    id="premium"
+    class="section"
+  >
+
+    <h2>
+      Premium Setup
+    </h2>
+
+
+    <div class="card">
+
+      <h3>
+        👑 Premium Membership
+      </h3>
+
+      <p>
+        यहाँ बाद में आपका चुना हुआ
+        premium/payment provider connect किया जा सकता है.
+      </p>
+
+      <button
+        class="btn"
+        id="premiumBtn"
+      >
+        Premium Setup
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOGIN
+  ========================== -->
+
+  <section
+    id="login"
+    class="section"
+  >
+
+    <div class="card">
+
+      <h2>
+        Login / Account
+      </h2>
+
+
+      <!-- EMAIL -->
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        autocomplete="email"
+      >
+
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        autocomplete="current-password"
+      >
+
+
+      <div class="actions">
+
+        <button
+          class="btn"
+          id="emailLogin"
+        >
+          Login
+        </button>
+
+
+        <button
+          class="btn secondary"
+          id="signup"
+        >
+          Create Account
+        </button>
+
+      </div>
+
+
+      <button
+        class="link"
+        id="forgot"
+      >
+        Forgot Password?
+      </button>
+
+
+      <hr>
+
+
+      <!-- PHONE OTP -->
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="+91XXXXXXXXXX"
+        autocomplete="tel"
+      >
+
+
+      <button
+        class="btn"
+        id="otp"
+      >
+        Send Phone OTP
+      </button>
+
+
+      <!-- FIREBASE RECAPTCHA -->
+
+      <div id="recaptcha-container"></div>
+
+
+      <!-- OTP CODE -->
+
+      <input
+        id="otpCode"
+        class="hidden"
+        maxlength="6"
+        inputmode="numeric"
+        placeholder="6-digit OTP"
+        autocomplete="one-time-code"
+      >
+
+
+      <button
+        id="verifyOtp"
+        class="btn hidden"
+      >
+        Verify OTP
+      </button>
+
+
+      <!-- MESSAGE -->
+
+      <p id="message"></p>
+
+    </div>
+
+  </section>
+
 </main>
-<footer>© 2026 Sa7hil Campaign • Smart • Simple • Secure</footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("startCampaignBtn")?.addEventListener("click", () => {
-    document.getElementById("campaign")?.scrollIntoView({behavior:"smooth"});
-  });
 
-  document.getElementById("launchCampaignBtn")?.addEventListener("click", () => {
-    const name = document.getElementById("campaignName").value.trim();
-    const goal = document.getElementById("campaignGoal").value.trim();
-    const description = document.getElementById("campaignDescription").value.trim();
-    const message = document.getElementById("campaignMessage");
+<!-- =========================
+     FOOTER
+========================== -->
 
-    if (!name || !goal || !description) {
-      message.textContent = "Please fill all campaign fields.";
-      return;
-    }
-    message.textContent = "✅ Campaign details ready. Firebase/backend save can be connected here.";
-  });
-});
-</script>
+<footer>
+  © 2026 Sa7hil Campaign • Smart • Simple • Secure
+</footer>
 
-<script type="module" src="script.js"></script>
+
+<!-- =========================
+     FIREBASE JAVASCRIPT
+========================== -->
+
+<script
+  type="module"
+  src="script.js"
+></script>
+
 </body>
 </html>
