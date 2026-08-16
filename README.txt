@@ -1,5 +1,13 @@
 Sa7hil Campaign website files
 
+
+start campaign 
+
+
+
+
+
+
 Files:
 - index.html
 - style.css
@@ -11,3 +19,4 @@ IMPORTANT:
 3. Enable Email/Password and Phone Authentication in Firebase.
 4. Real wallet/UPI/IMPS/NEFT and premium payments require an authorized provider and secure backend.
 5. start campaign view system 
+6. Sa7hil download apk system 
